@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Needed for absolute positioning of emojis */
+}
+
+#login-form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px 40px;
+    border-radius: 225px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.397);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    z-index: 10; /* Ensure form stays on top */
+}
+
+label {
+    font-size: 20px;
+    color: rgb(224, 22, 116);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border:#ff0000;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 77, 121, 0.7);
+}
+
+button {
+    background: #ff4d79;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #ff144b;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Falling emoji animation */
+.falling-emoji {
+    position: absolute;
+    font-size: 2em;
+    top: -50px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(100vh); }
+}
